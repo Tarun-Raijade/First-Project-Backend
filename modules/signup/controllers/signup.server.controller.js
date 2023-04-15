@@ -7,13 +7,13 @@ exports.signUp = function(req,res){
     data.save().then(function (d,err){
         if(err)
         {
-            console.error('Error while signing up');
+            console.error('Error while signing up.');
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
             });
         }
         else{
-            console.log('Signed up successfuly')
+            console.log('Signed up successfuly.')
             res.send(data)
         }
      })

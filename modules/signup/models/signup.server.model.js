@@ -3,7 +3,13 @@ var mongoose = require('mongoose'),
 
 var signUpSchema = new mongoose.Schema({
 
-    username: {
+    firstName: {
+        type: String
+    }, 
+    lastName: {
+        type: String
+    },
+    userName: {
         type: String
     },
     email: {
@@ -12,15 +18,15 @@ var signUpSchema = new mongoose.Schema({
     password: {
         type: String
     },
-    createdBy: {
-        type: Schema.ObjectId,
-        ref: 'User'
-    },
+    // createdBy: {
+    //     type: Schema.ObjectId,
+    //     ref: 'User'
+    // },
     createdAt: {
         type: Date,
         default: Date.now
     }
 });
 
-const signUp = mongoose.model('signup', signUpSchema)
+const signUp = mongoose.model('user', signUpSchema)
 module.exports = signUp
